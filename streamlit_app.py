@@ -1,17 +1,15 @@
 import streamlit as st
 from openai import OpenAI
 
-# --------------------- 应用界面 ---------------------
 st.title("📄 Document question answering (DeepSeek)")
 st.write("Upload a document below and ask a question – DeepSeek will answer!")
 
-# 初始化客户端
+
 client = OpenAI(
     api_key="sk-c958fbee89374324ab74f6b56301322f",
     base_url="https://api.deepseek.com/v1"
 )
 
-# --------------------- 核心逻辑 ---------------------
 uploaded_file = st.file_uploader(
     "Upload a document (.txt or .md)",
     type=("txt", "md")
